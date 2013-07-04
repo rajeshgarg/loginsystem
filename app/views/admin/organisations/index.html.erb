@@ -1,0 +1,25 @@
+<h1>Listing  organisation</h1>
+<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% unless @org.blank? %> 
+<% @org.each do |org| %>
+  <tr>
+    <td><%= org.name %></td>
+     
+    <td><%= link_to 'Show', admin_organisation_path(org) %></td>
+    <td><%= link_to 'Edit', edit_admin_organisation_path(org) %></td>
+    <td><%= link_to 'Destroy', admin_organisation_path(org), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+ 
+<br />
+ 
+<%= link_to 'New organisation', new_admin_organisation_path %>

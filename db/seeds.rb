@@ -1,0 +1,2 @@
+ 
+Organisation.create(:name=>"NONE")

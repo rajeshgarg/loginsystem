@@ -1,0 +1,5 @@
+<h3> Register </h3>
+<%= form_for @user, html:{class: 'form-signin'} do |f| %>
+  <%= render :partial => "form",  :object => f, :locals => { :user => @user } %>
+  <%= f.submit "update" %>
+<% end %>

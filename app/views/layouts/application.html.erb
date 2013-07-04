@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sam</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+   <div class="container">
+   	<div id="user_nav">
+        
+        <% if current_user %>
+          <%= link_to "Edit Profile", edit_user_path(current_user.id) %> |
+          <%= link_to "Signout", logout_path %>
+        <% else %>
+          <%= link_to "Register", new_user_path %> |
+          <%= link_to "Sign in", login_path %>
+        <% end %>
+    <div class="span4 offset4">
+      <%= yield %>
+    </div>
+   </div>
+
+   
+
+ 
+
+</body>
+</html>

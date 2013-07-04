@@ -1,0 +1,4 @@
+<%= form_for @org, :url=>admin_organisation_path(@org) do |f| %>
+<%= render :partial => "form",  :object => f, :locals => { :user => @org } %>
+<%= f.submit "update" %>
+<% end %>

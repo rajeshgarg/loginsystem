@@ -1,0 +1,27 @@
+  
+ <h3>Sign in</h3>
+
+<div class="user-form">
+  <%= form_for @user_session , :as => :user_session, :url => { :action => "create" }, html:{class: 'form-signin'}  do |f| %>
+    <p>
+     <%= f.label :login %><br />
+      <%= f.text_field :login,:class=>"input-block-level" %>
+    </p>
+    <p>
+     <%= f.label :password %><br />
+      <%= f.password_field :password ,:class=>"input-block-level"%>
+    </p>
+    <p><%= f.submit "Sign in" %></p>
+  <% end %>
+</div>
+
+<div class="omniauth-connect">
+  <h1>OR</h1>
+  <h3>Sign in with</h3>
+  <%= link_to image_tag("auth/google_64.png"), "/auth/open_id?openid_url=https://www.google.com/accounts/o8/id" %>
+  <% ["twitter","facebook", "linked_in"].each do |provider| %>
+    <%= link_to image_tag("auth/#{provider}_64.png"), "/auth/#{provider}" %>
+  <% end %>
+</div>
+
+<div class="clear"></div>

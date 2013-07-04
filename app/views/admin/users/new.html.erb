@@ -1,0 +1,6 @@
+<h1>Register</h1>
+
+<%= form_for User.new,:url=>admin_users_path do |f| %>
+<%= render :partial => "users/form",  :object => f, :locals => { :user => @user } %>
+<%= f.submit "Register" %>
+<% end %>

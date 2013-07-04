@@ -1,0 +1,6 @@
+<h1>New Organisation</h1>
+
+<%= form_for @org,:url=>admin_organisations_path do |f| %>
+<%= render :partial => "form",  :object => f, :locals => { :user => @org } %>
+<%= f.submit "Create" %>
+<% end %>
