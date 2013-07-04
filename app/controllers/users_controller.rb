@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+   # redirect_to "/contacts/facebook"
   end
 
   def edit

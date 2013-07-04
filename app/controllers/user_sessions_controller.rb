@@ -4,18 +4,21 @@ class UserSessionsController < ApplicationController
   def new
     @user_session = UserSession.new
   end
+  def index
+    render :text=>"ok"# :action=>"create"
+  end
+
 
   def create
     @user_session = UserSession.new(params[:user_session])
-     
-     
-      if @user_session.save
+    @user_session.save do |result|
+      if result
         flash[:notice] = "Login successful!"
-        redirect_back_or_default current_user
+        redirect_back_or_default account_url
       else
         render :action => :new
       end
-     
+    end
   end
 
   def destroy

@@ -3,8 +3,8 @@ Sam::Application.routes.draw do
     resources :users
     resources :organisations
   end
-  resources :users, :user_sessions,:authorizations
-
+  resources :users, :user_sessions,:authorizations,:omnicontacts
+  resources :accounts, :controller=>"users"
   match 'login' => 'user_sessions#new', :as => :login
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match "/auth/:provider/callback"=>"authorizations#create"  

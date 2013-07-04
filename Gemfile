@@ -7,6 +7,11 @@ gem 'authlogic'
 gem 'twitter-bootstrap-rails'
 gem 'omniauth-twitter'
 gem 'omniauth'
+gem 'contacts_19' # gem for fetch email after login
+gem "logankoester-authlogic-oauth" , :require=>"authlogic_oauth" 
+#gem for oauth
+gem "omnicontacts"
+
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
